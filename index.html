@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이생의 iPhone</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 25%,#dedbd5,#aaa7a1 65%,#77736f);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:#fff;padding:22px}
+.stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone{width:min(393px,94vw);height:min(852px,91vh);min-height:650px;padding:9px;border-radius:58px;background:linear-gradient(135deg,#777,#171717 18%,#050505 70%,#777);box-shadow:0 32px 85px #0008,inset 0 0 0 1px #ffffff70;position:relative}
+.phone:before{content:"";position:absolute;inset:3px;border-radius:55px;border:1px solid #ffffff50;pointer-events:none;z-index:30}
+.screen{height:100%;border-radius:49px;overflow:hidden;position:relative;background:#858d89}
+.wallpaper{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 28%,#d8d5cc 0%,transparent 35%),linear-gradient(145deg,#c7c6bd 0%,#8d9991 43%,#4d625d 100%)}
+.wallpaper:before{content:"";position:absolute;width:470px;height:590px;left:-180px;top:210px;border-radius:48% 52% 0 0;transform:rotate(-28deg);background:linear-gradient(145deg,#e6e0d5,#a7aaa0 45%,#65736c);box-shadow:30px 0 80px #344b4430}
+.wallpaper:after{content:"";position:absolute;width:300px;height:480px;right:-130px;top:65px;border-radius:50%;transform:rotate(30deg);background:linear-gradient(145deg,#e8e4d9,#aeb7ad 55%,#697970);filter:blur(1px)}
+.island{position:absolute;z-index:10;top:11px;left:50%;transform:translateX(-50%);width:118px;height:34px;background:#050505;border-radius:22px;box-shadow:0 1px 2px #0008}
+.status{position:absolute;z-index:11;top:15px;left:27px;right:27px;display:flex;justify-content:space-between;font-size:14px;font-weight:650;text-shadow:0 1px 4px #0006}
+.status-icons{display:flex;align-items:center;gap:5px}.signal{font-size:12px;letter-spacing:-2px}.battery{width:22px;height:11px;border:1.5px solid white;border-radius:3px;position:relative}.battery:before{content:"";position:absolute;left:2px;top:2px;bottom:2px;width:13px;background:white;border-radius:1px}.battery:after{content:"";position:absolute;right:-3px;top:3px;width:2px;height:4px;background:white;border-radius:0 2px 2px 0}
+.lock,.home{position:absolute;inset:0;z-index:2}.lock{display:flex;align-items:center;flex-direction:column;padding-top:102px;text-shadow:0 2px 12px #0005}.lock-date{font-size:17px;font-weight:500}.lock-time{font-size:86px;font-weight:250;letter-spacing:-5px;line-height:1.1}.lock-message{margin-top:auto;margin-bottom:118px;text-align:center;font-size:14px;line-height:1.7;color:#ffffffed}.unlock{margin-bottom:47px;background:#ffffff2b;border:1px solid #ffffff70;border-radius:24px;padding:11px 20px;color:white;font-size:13px;backdrop-filter:blur(15px);cursor:pointer}
+.home{display:none;flex-direction:column;justify-content:space-between;padding:72px 21px 25px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);column-gap:13px;row-gap:23px}
+.app{display:flex;flex-direction:column;align-items:center;gap:6px;border:0;background:none;color:#fff;font-size:11px;font-weight:500;text-shadow:0 1px 4px #0008;cursor:pointer;padding:0;min-width:0}
+.app-icon{width:58px;height:58px;border-radius:14px;display:grid;place-items:center;box-shadow:0 4px 12px #0002,inset 0 1px 1px #ffffff65;overflow:hidden;position:relative}
+.app-icon svg{width:100%;height:100%;display:block}
+.app:active .app-icon{transform:scale(.91)}
+.dock{height:88px;border-radius:28px;background:#ffffff38;backdrop-filter:blur(22px);border:1px solid #ffffff35;display:flex;align-items:center;justify-content:space-evenly;padding:8px}
+.dock .app-icon{width:54px;height:54px;border-radius:14px}
+.home-indicator{position:absolute;z-index:25;bottom:8px;left:50%;transform:translateX(-50%);width:118px;height:4px;border-radius:5px;background:#fff}
+.panel{position:absolute;inset:0;z-index:20;background:#f5f5f7;color:#222;display:none;flex-direction:column;padding:60px 20px 28px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.panel-title{font-size:24px;font-weight:700}.back{border:0;background:#e7e7eb;border-radius:20px;padding:8px 13px;font-size:13px;color:#087df0;cursor:pointer}.panel-content{font-size:14px;line-height:1.8;color:#555}.card{background:white;border-radius:17px;padding:17px;margin:10px 0;box-shadow:0 2px 12px #00000008}.card strong{display:block;color:#222;margin-bottom:5px}.small-note{font-size:11px;color:#ffffffd9;text-align:center;margin-top:12px;text-shadow:0 1px 4px #0006}
+@media(max-height:720px){.phone{height:94vh;min-height:590px}.home{padding-top:62px}.grid{row-gap:15px}.app-icon{width:52px;height:52px}}
+</style></head><body>
+<div class="stage"><div class="phone"><div class="screen">
+<div class="wallpaper"></div><div class="island"></div>
+<div class="status"><span>9:41</span><span class="status-icons"><span class="signal">▂▄▆</span><span>Wi-Fi</span><span class="battery"></span></span></div>
+<section class="lock" id="lock"><div class="lock-date">11월 2일 월요일</div><div class="lock-time">9:41</div><div class="lock-message">오늘도 평범한 하루가<br>될 줄 알았다.</div><button class="unlock" onclick="unlockPhone()">위로 쓸어올려 열기　↑</button></section>
+<section class="home" id="home"><div><div class="grid" id="grid"></div></div><div><div class="dock" id="dock"></div><div class="small-note">화면 속 앱을 눌러 이생의 흔적을 살펴보세요</div></div></section>
+<section class="panel" id="panel"><div class="panel-head"><button class="back" onclick="closeApp()">‹ 홈 화면</button><div class="panel-title" id="panelTitle"></div><span style="width:55px"></span></div><div class="panel-content" id="panelContent"></div></section>
+<div class="home-indicator"></div></div></div><div style="font-size:12px;color:#ffffffd9;text-shadow:0 1px 3px #0005">ISAENG'S IPHONE · 개인 기기</div></div>
+<script>
+const svg=(bg,inner)=>`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity=".04"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="${bg}"/><rect width="64" height="64" rx="14" fill="url(#g)"/>${inner}</svg>`;
+const icons={
+messages:svg('#39c85a','<path d="M13 17q0-5 6-5h27q6 0 6 6v17q0 6-6 6H29L18 49v-8q-5-1-5-7z" fill="white"/><path d="M22 24h21M22 31h15" stroke="#39c85a" stroke-width="2.5" stroke-linecap="round"/>'),
+photos:svg('#fff','<g transform="translate(32 32)"><ellipse rx="10" ry="19" fill="#ff4b42" transform="rotate(0) translate(0 -10)"/><ellipse rx="10" ry="19" fill="#ffb52e" transform="rotate(60) translate(0 -10)"/><ellipse rx="10" ry="19" fill="#ffe34a" transform="rotate(120) translate(0 -10)"/><ellipse rx="10" ry="19" fill="#4bcf72" transform="rotate(180) translate(0 -10)"/><ellipse rx="10" ry="19" fill="#35a9ed" transform="rotate(240) translate(0 -10)"/><ellipse rx="10" ry="19" fill="#a36bea" transform="rotate(300) translate(0 -10)"/><circle r="6" fill="white"/></g>'),
+instagram:svg('#d64b83','<rect x="13" y="13" width="38" height="38" rx="11" fill="none" stroke="white" stroke-width="4"/><circle cx="32" cy="32" r="9" fill="none" stroke="white" stroke-width="4"/><circle cx="44" cy="20" r="2.8" fill="white"/>'),
+notes:svg('#fff','<rect x="12" y="10" width="40" height="44" rx="4" fill="#fff"/><path d="M13 22h38" stroke="#f5c84b" stroke-width="7"/><path d="M20 31h25M20 38h25M20 45h18" stroke="#c7c7c7" stroke-width="2" stroke-linecap="round"/>'),
+calendar:svg('#fff','<rect x="10" y="12" width="44" height="43" rx="7" fill="white"/><path d="M10 22h44" stroke="#f04438" stroke-width="10"/><text x="32" y="45" text-anchor="middle" font-size="24" font-weight="700" fill="#333">2</text>'),
+music:svg('#fa315b','<path d="M39 13v29a8 8 0 1 1-5-7V21l17-4v20a8 8 0 1 1-5-7V12z" fill="white"/>'),
+files:svg('#4d9cf5','<path d="M10 21q0-5 5-5h13l5 5h16q5 0 5 5v19q0 5-5 5H15q-5 0-5-5z" fill="#fff"/><path d="M10 27h44" stroke="#cce5ff" stroke-width="3"/>'),
+settings:svg('#8e9399','<g transform="translate(32 32)" fill="white"><path d="M-4-25h8l2 7 6 3 6-3 5 7-5 6 1 7 5 5-4 8-8-1-6 4-2 7h-8l-2-7-6-4-8 1-4-8 5-5-1-7-5-6 5-7 6 3 6-3z"/><circle r="9" fill="#8e9399"/><circle r="4" fill="white"/></g>'),
+phone:svg('#34c759','<path d="M19 13q-5 0-5 6 2 19 21 28 7 3 12-3l4-6-12-8-5 6q-7-3-10-10l5-5-8-8z" fill="white"/>'),
+safari:svg('#f8f8f8','<circle cx="32" cy="32" r="24" fill="#238eea" stroke="#d5d5d5" stroke-width="3"/><path d="M42 19 35 35 22 45 29 29z" fill="#f34b4b"/><path d="m22 45 7-16 13-10-7 16z" fill="white"/>'),
+camera:svg('#555','<rect x="10" y="19" width="44" height="32" rx="7" fill="#292929"/><path d="M21 19l4-6h14l4 6" fill="#292929"/><circle cx="32" cy="35" r="11" fill="#bbb"/><circle cx="32" cy="35" r="7" fill="#4b5962"/><circle cx="32" cy="35" r="4" fill="#17232a"/>')
+};
+const appData=[
+['messages','메시지'],['photos','사진'],['instagram','Instagram'],['notes','메모'],['calendar','캘린더'],['music','음악'],['files','파일'],['settings','설정']
+];
+const dockData=[['phone','전화'],['messages','메시지'],['safari','Safari'],['camera','카메라']];
+function makeApp([id,name],dock=false){return `<button class="app" onclick="openApp('${id}')" aria-label="${name}"><span class="app-icon">${icons[id]}</span>${dock?'':`<span>${name}</span>`}</button>`}
+document.getElementById('grid').innerHTML=appData.map(x=>makeApp(x)).join('');
+document.getElementById('dock').innerHTML=dockData.map(x=>makeApp(x,true)).join('');
+const data={
+messages:['메시지','<div class="card"><strong>최랑</strong>아직 대화가 없습니다.<br><span style="color:#999">이생의 이야기가 시작되면 이곳에 대화가 쌓입니다.</span></div>'],
+photos:['사진','<div class="card"><strong>최근 항목</strong>아직 사진이 없습니다.<br><span style="color:#999">함께한 순간들이 이곳에 남게 됩니다.</span></div>'],
+instagram:['Instagram','<div class="card"><strong>isaeng_daily</strong>게시물 0　팔로워 1　팔로잉 1<hr>아직 게시물이 없습니다.<br><span style="color:#999">이생의 일상과 최랑과의 추억이 기록될 공간입니다.</span></div>'],
+notes:['메모','<div class="card"><strong>새로운 메모</strong>오늘은 서쪽 담장 아래를 지나다가<br>처음 보는 여인을 보았다.<br><br><span style="color:#999">— 초안 · 아직 저장되지 않은 생각</span></div>'],
+calendar:['캘린더','<div class="card"><strong>11월</strong>중요한 날은 아직 표시되어 있지 않습니다.</div>'],
+music:['음악','<div class="card"><strong>최근 재생</strong>아직 재생한 음악이 없습니다.</div>'],
+files:['파일','<div class="card"><strong>나의 iPhone</strong>문서<br>다운로드<br>최근 항목</div>'],
+settings:['설정','<div class="card"><strong>이생의 iPhone</strong>비행기 모드　끔<br>Wi-Fi　연결됨<br>알림　켜짐</div>'],
+phone:['전화','<div class="card"><strong>최근 통화</strong>최근 통화 내역이 없습니다.</div>'],
+safari:['Safari','<div class="card"><strong>즐겨찾기</strong>검색 기록이 비어 있습니다.</div>'],
+camera:['카메라','<div class="card"><strong>카메라</strong>아직 촬영한 사진이 없습니다.</div>']
+};
+function unlockPhone(){document.getElementById('lock').style.display='none';document.getElementById('home').style.display='flex'}
+function openApp(id){document.getElementById('panelTitle').textContent=data[id][0];document.getElementById('panelContent').innerHTML=data[id][1];document.getElementById('panel').style.display='flex'}
+function closeApp(){document.getElementById('panel').style.display='none'}
+</script></body></html>
